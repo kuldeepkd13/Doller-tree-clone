@@ -1,12 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/10a9d63beb.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: #f2f2f2;
+        }
+        #signup {
+            /* border: 1px solid red; */
+            width: 30%;
+            margin: auto;
+            margin-top: 10%;
+            height: 350px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        #signup>h1 {
+            text-align: center;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form>div {
+            align-content: center;
+            justify-content: center;
+            margin-top: 10px;
+            /* border: 1px solid red; */
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+        }
+
+        i {
+            padding: 20px;
+        }
+
+        form>div>input {
+            width: 80%;
+            font-size: 20px;
+            border-radius: 6px;
+            border: none;
+            outline: 0PX;
+            background-color: #f2f2f2;
+        }
+
+        #signup form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: none;
+            margin-top: 1rem;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+        }
+
+        #signup form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="signup">
+        <h1>SIGN UP</h1>
+        <form>
+            <div>
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="name" placeholder="EnterYourName">
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" placeholder="EnterYourEmail">
+            </div>
+            <div>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" placeholder="EnterPassword">
+            </div>
+            <input type="submit" id="alert" value="Submit">
+        </form>
+    </div>
 </body>
+<script>
+    let data = JSON.parse(localStorage.getItem("userdata")) || [];
+    let formEl = document.querySelector("form");
+    let nameEl = document.getElementById("name");
+    let emailEl = document.getElementById("email");
+    let passwordEl = document.getElementById("password");
+
+    formEl.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let formdata = {
+            name: nameEl.value,
+            email: emailEl.value,
+            password: passwordEl.value,
+        }
+
+        data.push(formdata);
+        localStorage.setItem("userdata", JSON.stringify(data));
+    })
+    let inputEl = document.getElementById("alert");
+    inputEl.addEventListener("click",function(){
+        if(nameEl.value==="" && emailEl.value==="" && passwordEl.value===""){
+            alert("fill the data first")
+        }else{
+            alert("Account Created")
+            window.location.href='signin.html'
+        }
+    })
+</script>
+
 </html>
