@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* nav bar */
 #nav {
     width: 100%;
@@ -103,197 +104,79 @@
 .lower ul li:hover .submenu-1 ul li:last-child {
     border-bottom: none;
 }
-
-/* product main body */
-.Image {
-    margin-top: 50px;
+/* product */
+#mainbody{
+    width: 98%;
     /* border: 2px solid red; */
-}
-
-.Image img {
-    width: 90%;
-    display: block;
-    margin: auto;
-}
-
-.Image>button {
-    display: block;
-    margin: auto;
-    padding: 5px 25px;
-    border: none;
-    background-color: rgba(41, 41, 104, 0.452);
-}
-
-.Image>button>a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.Image>button:hover {
-    background-color: rgb(41, 80, 80);
-}
-
-.mainbody {
-    margin-top: 50px;
-    /* border: 3px solid red; */
-    width: 100%;
-}
-
-.mainbody h1 {
-    text-align: center;
-    font-size: 50px;
-}
-
-.mainbody>.card {
-
+    /* height: 1000px; */
     margin: auto;
     display: grid;
-    width: 95%;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 25% 75%;
+}
+#mainbody > div {
+    margin-top: 40px;
+    /* border: 2px solid black; */
+}
+#mainproductbar > h1{
+margin-top: 25px;
+padding-left: 25px;
+}
+#mainproductbar > p{
+    margin-top: 25px;
+    padding-left: 25px;
+    margin-bottom: 30px;
+    text-align: justify;
+    padding-right: 25px;
+}
+#productbar{
+    /* border: 3px solid brown; */
+    /* height: 500px; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: 10px;
 }
-
-.mainbody>.card>div {
-    margin-top: 60px;
-    /* border: 1px solid red; */
-    text-align: center;
-
+#productbar > div{
+    /* border: 2px solid red; */
+   padding-bottom: 20px;
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  
 }
-
-.mainbody>.card>div>img {
-    width: 80%;
-    display: block;
-    margin: auto;
+#productbar >div:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
-
-.mainbody2 {
-    /* border: 1px solid red; */
+#productbar > div >img{
     width: 100%;
 }
-
-.mainbody2 h1 {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 60px;
+#productbar > div >h3{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 10px;
+    font-size: 15px;
 }
-
-#card {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin: auto;
-
+#productbar>div>p{
+    text-align: right;
+    padding-right: 30px;
 }
-
-#card>div {
-    text-align: center;
-    font-size: 20px;
+#productbar > div >h5{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 10px;
+}
+#productbar  button {
+display: block;
+margin: auto;
+background-color: rgba(92, 92, 192, 0.89);
+border: none;
+outline: 0px;
+padding: 5px 20px;
+color: white;
+border-radius: 5px;
+}
+#productbar  button:hover{
     cursor: pointer;
+    background-color: rgb(0, 0, 255);
 }
 
-#card>div>img {
-    width: 100%;
-}
-
-.mainbody3 {
-    /* border: 1px solid red; */
-    width: 100%;
-    margin-bottom: 55px;
-}
-
-.mainbody3 h1 {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 60px;
-}
-
-#card1 {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin: auto;
-}
-
-#card1>div {
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-#card1>div>img {
-    width: 90%;
-    border-radius: 100%;
-}
-
-.mainbody4 {
-    /* border: 1px solid red; */
-    width: 80%;
-    margin: auto;
-    background-color: rgba(129, 162, 201, 0.219);
-}
-
-.mainbody4 h1 {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 40px;
-    color: rgba(112, 18, 18, 0.623);
-}
-
-#card2 {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin: auto;
-}
-
-#card2>div {
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-#card2>div>img {
-    width: 50%;
-}
-
-.mainbody5 {
-    /* border: 1px solid red; */
-    width: 100%;
-    margin-bottom: 60px;
-}
-
-.mainbody5 h1 {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 40px;
-}
-
-#card3 {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin: auto;
-}
-
-#card3>div {
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-#card3>div>img {
-    width: 80%;
-}
 /*footer css */
 .lastcard {
     display: flex;
@@ -324,7 +207,7 @@
     /* border: 1px solid red; */
     width: 100%;
     /* height: 600px; */
-    background-color:#a7a4a479;
+    background-color: #a7a4a479;
     display: grid;
     grid-template-columns: repeat(4, 37% 21% 21% 21%);
     margin-top: 40px;
@@ -335,45 +218,53 @@
     text-align: center;
     /* height: 450px; */
 }
-#footercard>div{
+
+#footercard>div {
     /* border: 2px solid brown; */
     /* height: 150px; */
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
     align-content: center;
     padding-left: 60px;
 }
-#footercard>div>div{
+
+#footercard>div>div {
     margin-top: 40px;
     width: 100%;
     /* border: 1px solid yellowgreen; */
     /* height: 60px; */
 }
-#footercard>div>div>img{
+
+#footercard>div>div>img {
     width: 50%;
     display: block;
     margin: auto;
 }
-#footercard>div>img{
+
+#footercard>div>img {
     margin-top: 50px;
     width: 400%;
 }
-.footer>div>h2{
+
+.footer>div>h2 {
     margin-top: 40px;
     font-family: Nunito - 600;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 13px;
 }
-.footer>div>p{
+
+.footer>div>p {
     margin-bottom: 13px;
 }
-.footer>div>p>a{
+
+.footer>div>p>a {
     text-decoration: none;
-    color:#12823b;
+    color: #12823b;
     font-family: Arial;
     font-size: 14px;
 }
-.footer>div>p>a:hover{
+
+.footer>div>p>a:hover {
     text-decoration: underline;
 }
