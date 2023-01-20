@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Vases, Party Supplies, Cleaning & More | One-click pick.com</title>
+    <link rel="stylesheet" href="/halloweenpage.css">
+
+</head>
+
+<body>
+    <!-- nav bar -->
+    <div id="nav">
+        <div class="top">
+            <img src="/one-click pick logo.png" alt="error">
+            <div class="search">
+                <input type="text" placeholder="search one-click pick.com ">
+                <button type="submit"> <img src="https://www.dollartree.com/file/general/Search.svg" alt=""></button>
+
+            </div>
+
+            <a href="/signin.html"><img src="https://www.dollartree.com/file/general/DT-icon-account-green.svg" alt="">
+                Account</a>
+            <a href="/cart.html"><img src="https://www.dollartree.com/file/general/DT-icon-cart-green.svg"
+                    alt="">Cart</a>
+        </div>
+        <div class="lower">
+            <ul>
+                <li><a href="#">All Department</a>
+                    <div class="submenu-1">
+
+                        <ul>
+                            <li><a href="">Holidays, Seasons & Celebrations</a></li>
+                            <li><a href="">Toys & Crafts</a></li>
+                            <li><a href="">Kitchen & Home Décor</a></li>
+                            <li><a href="">Home & Officer</a></li>
+                            <li><a href="">Health & Personal Care</a></li>
+                            <li><a href="">Food, Candy & Drinks</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Holidays, Seasons & Celebrations</a></li>
+                <li><a href="#">Toys & Crafts</a></li>
+                <li><a href="#">Kitchen & Home Décor</a></li>
+                <li><a href="#">Home & Officer</a></li>
+                <li><a href="#">Health & Personal Care</a></li>
+                <li><a href="#">Food, Candy & Drinks</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- product -->
+    <div id="mainbody">
+        <div id="sidebar"></div>
+        <!-- <div id="productheading"></div> -->
+        <div id="mainproductbar">
+            <h1>Halloween Decorations</h1>
+            <div id="productbar">
+
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="lastcard">
+        <a href="/signup.html">Enter Sign Up</a>
+        <p>Be the first to know about new arrivals online, in-store specials & events, fun ideas & inspiration, and
+            more!</p>
+        <button><a href="/signup.html">Sign Up</a></button>
+    </div>
+
+    <div class="footer">
+        <div id="footercard">
+            <div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/footericon_Instagram.png" alt="">
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/footericon-fb.png" alt="">
+                </div>
+                <div><img src="https://www.dollartree.com/file/general/footericon-twitter.png" alt="">
+                </div>
+                <div><img src="https://www.dollartree.com/file/general/footericon-linkedin.png" alt="">
+                </div>
+                <div><img src="https://www.dollartree.com/file/general/footericon-pinterest.png" alt="">
+                </div>
+            </div>
+            <div>
+                <img src="https://www.dollartree.com/file/general/vsblogo_final_m_260x55_20200805.png" alt="">
+            </div>
+            <div>
+                <img src="https://www.dollartree.com/file/general/footer-videos.png" alt="">
+            </div>
+        </div>
+        <div>
+            <h2>Customer Service</h2>
+            <p><a href="#">Catalog Quick Order</a></p>
+            <p><a href="#">Contact Us / Help Center</a></p>
+            <p><a href="#">Forgot Password</a></p>
+            <p><a href="#">In-Store Pickup</a></p>
+            <p><a href="#">My Account</a></p>
+            <p><a href="#">Order Status</a></p>
+            <p><a href="#">Placing Tax-Exempt Orders</a></p>
+            <p><a href="#">Recall Information</a></p>
+            <p><a href="#">Privacy Requests</a></p>
+        </div>
+        <div>
+            <h2>One-Click Pick Stores</h2>
+            <p><a href="#">Gift Cards</a></p>
+            <p><a href="#">Reloadable Debit Cards</a></p>
+            <p><a href="#">Store Locator</a></p>
+            <p><a href="#">Store Careers</a></p>
+            <p><a href="#">Weekly Ad</a></p>
+            <p><a href="#">Value Seekers Blog</a></p>
+        </div>
+        <div>
+            <h2>Company Info</h2>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Affiliates</a></p>
+            <p><a href="#">Associates</a></p>
+            <p><a href="#">Careers</a></p>
+            <p><a href="#">Investor Relations</a></p>
+            <p><a href="#">Real Estate Partners</a></p>
+            <p><a href="#">Sustainability Report (PDF 2.7 MB)</a></p>
+            <p><a href="#">Vendor Partners</a></p>
+            <p><a href="#">W2 Information</a></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    let API = 'https://63ca377e4f53a004201ed865.mockapi.io/halloween';
+
+    async function fetchdata() {
+
+        try {
+
+            let res = await fetch(API);
+            let data = await res.json();
+            console.log(data)
+            displayData(data)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    fetchdata();
+
+    let productEl = document.getElementById("productbar");
+
+    function displayData(data){
+
+        data.forEach(element => {
+
+            let div= document.createElement("div");
+
+            let image = document.createElement("img")
+            image.src=element.image;
+            let name = document.createElement("h3");
+            name.innerText=element.name;
+            let price = document.createElement("p");
+            price.innerText=  `Rs:-${element.price}`;
+            let rating = document.createElement("h5");
+            rating.innerText=`Rating ★★★☆`
+            let button = document.createElement("button");
+            button.innerText="Add To Cart"
+
+            div.append(image,name,price,rating,button)
+            productEl.append(div)
+        });
+        
+    }
+
+
+</script>
