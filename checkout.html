@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Product| One-click pick.com</title>
-    <link rel="stylesheet" href="vsmall.css">
+    <title>Glass Vases, Party Supplies, Cleaning & More | One-click pick.com</title>
     <script src="https://kit.fontawesome.com/10a9d63beb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="checkout.css">
 </head>
 
 <body>
@@ -120,35 +120,50 @@
             </ul>
         </div>
     </div>
-    <!-- product -->
-    <div id="mainbody">
-        <div class="singleimg">
-            <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v546946660041925293/products/302749.jpg" alt="" id="mainimg" >
-            <div class="smallimg">
-                <div class="smallimgcol">
-                    <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v546946660041925293/products/302749.jpg" 
-                     alt="">
+    <!-- product start -->
+
+    <div id="product">
+        <div class="checkout-container">
+            <h1>Checkout</h1>
+            <h3>Fill the Details</h3>
+            <form>
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <input type="Name" id="name" 
+                    placeholder="EnterYourName">
                 </div>
-                <div class="smallimgcol">
-                    <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v5448542338198076083/products/302749_v2.jpg" alt="">
+                 <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="EnterYourEmail">
                 </div>
-                <div class="smallimgcol">
-                    <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v2919894372754726490/products/302749_v3.jpg" alt="">
+                <div>
+                    <i class="fa-solid fa-address-card"></i>
+                    <textarea id="address" placeholder="Address"></textarea>
                 </div>
-                <div class="smallimgcol">
-                    <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v8178721554999114699/products/302749_v4.jpg" alt="">
-                </div>
-            </div>
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="zipcode" id="code" placeholder="Zipcode">
+                </div> 
+                <div>
+                    <i class="fa fa-credit-card"></i>
+                    <input type="number" id="card-number" placeholder="Card Number:">
+                </div> 
+                <div>
+                    <i class="fa fa-calendar-o"></i>
+                    <input type="month" id="expiration-date" placeholder="expiration-date">
+                </div> 
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="number" id="cvv" placeholder="cvv">
+                </div> 
+                <button type="submit" id="Placeorder">Place Order</button>
+            </form>
         </div>
-        <div class="singleproduct">
-            <h1>Fuzzy Friends Valentines Chocolate Scented Bears, 7 in.</h1>
-            <h5>Rating:-★★★☆  <span>Write Review</span></h5>
-            <h3>Price:- Rs 65</h3>
-            <button>Add to Cart</button>
-            <h4>Product Details</h4>
-            <p>Cuddly Valentines bears smell great and are oh-so-soft and ready for hugs! They're a great addition to prize boxes, gifts, and care packages. Valentines chocolate scented bears come assorted among red, tan, black, and brown. These are ideal for florists, party planners, and crafters.</p>
+        <div id="display">
+            <h1 id="heading"></h1>
         </div>
     </div>
+    
     <!-- footer -->
     <div class="lastcard">
         <a href="/signup.html">Enter Sign Up</a>
@@ -156,7 +171,6 @@
             more!</p>
         <button><a href="/signup.html">Sign Up</a></button>
     </div>
-
     <div class="footer">
         <div id="footercard">
             <div>
@@ -216,6 +230,27 @@
     </div>
 
 </body>
+<script>
+ const form = document.querySelector("form");
 
-<script src="/vsmall.js"></script>
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  // Collect form data
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const address = document.getElementById('address').value;
+  const cardNumber = document.getElementById('card-number').value;
+  const expirationDate = document.getElementById('expiration-date').value;
+  const cvv = document.getElementById('cvv').value;
+  const heading=document.getElementById('heading')
+  // Validate form data
+  if (!name || !email || !address || !cardNumber || !expirationDate || !cvv) {
+    alert('Please fill out all fields');
+    return;
+  }
+  heading.innerText=`Thank you, ${name}! Your order has been placed.`
+});
+
+  </script>
 </html>

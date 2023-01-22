@@ -9,6 +9,12 @@
     width: 100%;
     /* border: 2px solid red; */
 }
+#nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: aliceblue;
+}
 
 .top {
     display: flex;
@@ -103,6 +109,9 @@
 
 .lower ul li:hover .submenu-1 ul li:last-child {
     border-bottom: none;
+}
+.submenu-1:last-child{
+    margin-left: -25px;
 }
 /* product */
 #mainbody{

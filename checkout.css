@@ -114,96 +114,101 @@
     margin-left: -25px;
 }
 /* product */
-#mainbody{
-    width: 98%;
-    /* border: 2px solid red; */
-    /* height: 1000px; */
-    margin: auto;
+#product{
     display: grid;
-    grid-template-columns: 25% 75%;
-}
-#mainbody > div {
-    margin-top: 40px;
-    border: 2px solid black;
+    grid-template-columns: 55% 35%;
+    justify-content: space-around;
 }
 
-#sidebar{
-    padding-top: 25px;
-    padding-left: 25px;
+.checkout-container{
+    margin-top: 25px;
+    margin-bottom: 50px;
+    /* border: 1px solid red; */
+}
+.checkout-container > h1 {
+    text-align: center;
+    margin-top: 25px;
+    text-decoration: underline;
+    color: rgba(0, 0, 255, 0.479);
+    font-size: 50px;
+}
+.checkout-container > h3 {
+    text-align: center;
+    margin-top: 25px;
+}
+form {
+    margin: auto;
+    /* width: 50%;  */
+    /* border: 2px solid red; */
+    text-align: center;
+    background-color: beige;
+}
+form > div {
+    /* border: 2px solid black; */
+    margin-top: 15px;
     
 }
-#sidebar > h1{
-    margin-top: 15px;
-    margin-bottom: 20px;
+i{
+    display: block;
+    text-align: center;
 }
-#sidebar >h2{
-    margin-top: 15px;
-}
-select{
-    margin-top: 15px;
-    margin-bottom: 20px;
+.checkout-container input {
+    margin-top: 13px;
+    width: 60%;
     font-size: 20px;
-    width: 90%;
+    border: none;
+    outline: 0px;
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+.checkout-container textarea{
+    margin-top: 13px;
+    width:60%;
+    font-size: 20px;
+    border: none;
+    outline: 0px;
+    position: relative;
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+.checkout-container button{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    outline: 0px;
+    padding: 8px 18px;
+    background-color: seagreen;
+    cursor: pointer;
+    color: wheat;
+    border-radius: 8px;
+}
+.checkout-container button:hover{
+    background-color: rgba(71, 68, 235, 0.89);
+    color: black;
 }
 
-#mainproductbar > h1{
-margin-top: 25px;
-padding-left: 25px;
+#display{
+    background-image: url(https://cdn.pixabay.com/photo/2022/12/31/12/10/online-shopping-7688529_960_720.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    opacity: 0.55;
+    
 }
-#mainproductbar > p{
-    margin-top: 25px;
-    padding-left: 25px;
-    margin-bottom: 30px;
-    text-align: justify;
-    padding-right: 25px;
+#display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
-#productbar{
-    /* border: 3px solid brown; */
-    /* height: 500px; */
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-}
-#productbar > div{
-    /* border: 2px solid red; */
-   padding-bottom: 20px;
-   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-  
-}
-#productbar >div:hover{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-}
-#productbar > div >img{
-    width: 100%;
-}
-#productbar > div >h3{
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-#productbar>div>p{
-    text-align: right;
-    padding-right: 30px;
-}
-#productbar > div >h5{
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-bottom: 10px;
-}
-#productbar  button {
-display: block;
-margin: auto;
-background-color: rgba(92, 92, 192, 0.89);
-border: none;
-outline: 0px;
-padding: 5px 20px;
-color: white;
-border-radius: 5px;
-}
-#productbar  button:hover{
-    cursor: pointer;
-    background-color: rgb(0, 0, 255);
+#display > h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    color: green;
 }
 
 /*footer css */
