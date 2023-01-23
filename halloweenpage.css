@@ -9,7 +9,8 @@
     width: 100%;
     /* border: 2px solid red; */
 }
-#nav{
+
+#nav {
     position: sticky;
     top: 0;
     z-index: 1;
@@ -110,73 +111,116 @@
 .lower ul li:hover .submenu-1 ul li:last-child {
     border-bottom: none;
 }
-.submenu-1:last-child{
+
+.submenu-1:last-child {
     margin-left: -25px;
 }
+
 /* product */
-#mainbody{
+#mainbody {
     width: 98%;
     /* border: 2px solid red; */
     /* height: 1000px; */
     margin: auto;
     display: grid;
     grid-template-columns: 25% 75%;
+    padding-bottom: 35px;
 }
-#mainbody > div {
+
+#mainbody>div {
     margin-top: 40px;
     /* border: 2px solid black; */
 }
-#mainproductbar > h1{
-margin-top: 25px;
-padding-left: 25px;
-margin-bottom: 60px;
-font-size: 50px;
+
+#sidebar {
+    padding-top: 25px;
+    padding-left: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
-#productbar{
+
+#sidebar>h1 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#sidebar>h2 {
+    margin-top: 15px;
+}
+
+select {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 90%;
+}
+
+#mainproductbar>h1 {
+    margin-top: 25px;
+    padding-left: 25px;
+}
+
+#mainproductbar>p {
+    margin-top: 25px;
+    padding-left: 25px;
+    margin-bottom: 30px;
+    text-align: justify;
+    padding-right: 25px;
+}
+
+#productbar {
     /* border: 3px solid brown; */
     /* height: 500px; */
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
-#productbar > div{
+
+#productbar>div {
     /* border: 2px solid red; */
-   padding-bottom: 20px;
-   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-  
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
 }
-#productbar >div:hover{
+
+#productbar>div:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
-#productbar > div >img{
+
+#productbar>div>img {
     width: 100%;
 }
-#productbar > div >h3{
+
+#productbar>div>h3 {
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: 10px;
     font-size: 15px;
 }
-#productbar>div>p{
+
+#productbar>div>p {
     text-align: right;
     padding-right: 30px;
 }
-#productbar > div >h5{
+
+#productbar>div>h5 {
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: 10px;
 }
-#productbar  button {
-display: block;
-margin: auto;
-background-color: rgba(92, 92, 192, 0.89);
-border: none;
-outline: 0px;
-padding: 5px 20px;
-color: white;
-border-radius: 5px;
+
+#productbar button {
+    display: block;
+    margin: auto;
+    background-color: rgba(92, 92, 192, 0.89);
+    border: none;
+    outline: 0px;
+    padding: 5px 20px;
+    color: white;
+    border-radius: 5px;
 }
-#productbar  button:hover{
+
+#productbar button:hover {
     cursor: pointer;
     background-color: rgb(0, 0, 255);
 }

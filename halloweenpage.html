@@ -122,8 +122,29 @@
     </div>
     <!-- product -->
     <div id="mainbody">
-        <div id="sidebar"></div>
-        <!-- <div id="productheading"></div> -->
+        <div id="sidebar">
+            <h1>ItemFound:- <span id="heading1">1</span></h1>
+            <h2>Sort By Name</h2>
+              <select id="sortNames" >
+                <option value="">Sort By Names</option>
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+              </select>
+              <h2>Sort By Price</h2>
+              <select id="sortPrice" >
+                <option value="">Sort By Price</option>
+                <option value="htl">High to Low</option>
+                <option value="lth">Low to High</option>
+              </select>
+              <h2>Filter Materials</h2>
+              <select id="filterRole" >
+                <option value="">Materials</option>
+                <option value="Polyester">Polyester</option>
+                <option value="Mdf">Mdf</option>
+                <option value="Tinsel">Tinsel</option>
+                <option value="Glass">Glass</option>
+              </select>
+        </div>
         <div id="mainproductbar">
             <h1>Halloween Decorations</h1>
             <div id="productbar">
@@ -201,7 +222,7 @@
 
 </html>
 <script>
-
+    
     let API = 'https://63ca377e4f53a004201ed865.mockapi.io/halloween';
 
     async function fetchdata() {
@@ -209,9 +230,10 @@
         try {
 
             let res = await fetch(API);
-            let data = await res.json();
+            data = await res.json();
             console.log(data)
-            displayData(data)
+            // displayData(data)
+            filterData(data)
         } catch (error) {
             console.log(error)
         }
@@ -220,10 +242,85 @@
 
     fetchdata();
 
+    let priceEl =document.getElementById("sortPrice");
+    let nameEl=document.getElementById("sortNames");
+    let selectionEl= document.getElementById("filterRole");
+    let heading1El = document.getElementById("heading1")
+    selectionEl.addEventListener("change",function(){
+        fetchdata()
+    })
+     function filterData(data){
+    if(selectionEl.value==""){
+      displayData(data);
+    }else {
+      let filtered = data.filter((ele)=>{
+        if(ele.materials==selectionEl.value){
+          return true;
+        }else {
+          return false;
+        }
+      })
+      displayData(filtered)
+    }
+   }
+   nameEl.addEventListener("change", function() {
+    if (nameEl.value === "") {
+        fetchdata()
+    } else {
+        if (nameEl.value === "ascending") {
+            let sortedData = data.sort(function(a, b) {
+                if (a.name < b.name) {
+                    return -1;
+                } else if (a.name > b.name) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+            displayData(sortedData);
+        } else if (nameEl.value === "descending") {
+            let sortedData = data.sort(function(a, b) {
+                if (a.name > b.name) {
+                    return -1;
+                } else if (a.name < b.name) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+            displayData(sortedData);
+        }
+    }
+});
+
+priceEl.addEventListener("change",function(){
+    if(priceEl.value==""){
+        fetchdata()
+    }
+    else 
+    
+    {if (priceEl.value=="htl"){
+        let sortprice = data.sort(function(a,b){
+            return b.price-a.price
+        });
+        displayData(sortprice);
+    }else if (priceEl.value=="lth"){
+        let sortprice = data.sort(function(a,b){
+            return a.price - b.price
+        });
+        displayData(sortprice)
+    }
+}
+})
+
+
+
+
+
     let productEl = document.getElementById("productbar");
-
+    let cart = JSON.parse(localStorage.getItem("cart"))||[];
     function displayData(data){
-
+         productEl.innerHTML="";
         data.forEach(element => {
 
             let div= document.createElement("div");
@@ -238,12 +335,33 @@
             rating.innerText=`Rating ★★★☆`
             let button = document.createElement("button");
             button.innerText="Add To Cart"
+            image.addEventListener('click', function() {
+                window.location.href = `vsmall.html`;
+              });
+            button.addEventListener("click",function(){
+                if(checkcart(element)){
+                    alert("Item is already in the cart")
+                }else {
+                    cart.push({...element,quantity:1});
+                    localStorage.setItem("cart",JSON.stringify(cart))
+                    alert("Item Added Successfully")
+                }
+            })
 
             div.append(image,name,price,rating,button)
             productEl.append(div)
         });
-        
+        heading1El.innerText=data.length
     }
+
+        function checkcart(element){
+           for(let i=0;i<cart.length;i++){
+            if(cart[i].id===element.id){
+                return true;
+            }
+           }
+           return false;
+        }
 
 
 </script>
