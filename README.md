@@ -20,9 +20,8 @@ To visit our website Please [Click Here](https://calm-rolypoly-eba6c1.netlify.ap
 * Product Page
 * Searching, Delete, Filtering, Sorting
 * Cart page
+* Checkout Page
 
 ## 1. Home Page
-
-
-
+![Home page](./images/homepage.jpeg)
 
